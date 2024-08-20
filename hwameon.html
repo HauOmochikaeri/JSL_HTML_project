@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>화면구성</title>
+  <!---->
+  <script type="text/javascript">
+    // '|'누르면 작동함
+	  function asdf(){
+      /*
+      버튼 번호 확인
+      var sadf = event.keyCode;
+      alert(sadf);
+      */
+      if(event.keyCode == 124){
+        var msg = prompt("하실 말씀 있습니까?");
+        if(msg == 'open'){
+          alert("열립니다.");
+        }
+      }
+    }
+  </script>
+  <link href="./css/main.css" rel="stylesheet" />
+  <style type="text/css">
+
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100;300;400;500;600;700;800&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div name="tennkann" class="tennkann">
+    <input type="text" name="goto" style="border:none; width:1px; caret-color: transparent; outline:none;" onkeypress="javascript:asdf();" maxlength="0" autofocus>
+  </div>
+  <div name="title" class="title"><p class="konoha noto-serif-jp-asdf">木ノ葉隠れの里へようこそ！</p><img src="./img/Konohagakure_no_Sato.webp" style="width: 100%; height: 100%;" alt="나뭇잎마을 모습">
+    
+  </div>
+  <div name="naiyou" class="naiyou"></div>
+</body>
+</html>
