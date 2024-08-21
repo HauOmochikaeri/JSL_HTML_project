@@ -1,0 +1,59 @@
+*{margin: 0px; padding: 0px; }
+div {
+  border: 5px solid #aaa;
+}
+
+.backg {
+  background-image: url("../img/naruto/naruto_backback.jpg");
+  background-size: cover;
+}
+
+.title{
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 80%;
+  height: 400px;
+  border: 10px solid rgba(156, 71, 32, 1);
+}
+
+.konoha{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate( -50%, -50% );
+  font-size: 64px;
+  text-align: center;
+  color: black;
+}
+
+.noto-serif-jp-asdf {
+  font-family: "Noto Serif JP", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.naiyou{
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: 2000px;
+  background-color: white;
+  border-radius: 30px;
+  border: 1px solid gray;
+  margin-bottom: 50px;
+  margin-top: 10px;
+}
+
+.active {
+    display: block !important;
+}
+
+/* Class 부여*/
+.naruto {
+    display: none;
+}
+.conan {
+    display: none;
+}
