@@ -80,7 +80,7 @@ footer {
     margin-right: auto;
     position: relative;
     width: 100%;
-    height: 540px;
+    height: 640px;
     border: 0px solid rgba(156, 71, 32, 1);
 }
 .mon{
@@ -88,9 +88,11 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate( -50%, -50% );
-    font-size: 64px;
+    font-size: 74px;
     text-align: center;
-    color: black;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
 .noto-serif-jp-asdf {
   font-family: "Noto Serif JP", serif;
@@ -106,4 +108,67 @@ footer {
 
 .ekja{
     border: 10px solid rgba(156, 71, 32, 1);
+}
+
+
+/* 슬라이더 */
+/* 슬라이더 컨테이너 */
+        .slider {
+            background-color:black;
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            margin: 40px auto;
+            overflow: hidden;
+            border: 10px solid rgba(156, 71, 32, 1);
+            border-radius: 10px;
+        }
+
+        /* 슬라이더 안의 사진들 */
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* 개별 사진 */
+        .slides div {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* 이전/다음 버튼 */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+.hokage{
+    font-size: 36px;
+    text-align:center;
+}
+
+.setsumei{
+    text-align:center;
+    color:white;
+    font-weight: bold;
+    font-size: 20px;
+}
+.shashinn{
+    width:600px;
+    height:440px;
 }

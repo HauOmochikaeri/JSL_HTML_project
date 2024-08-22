@@ -8,7 +8,50 @@
 
     </style>
     <script type="text/javascript">
+        let currentIndex = 0;
 
+    function showSlide(index) {
+        const slides = document.querySelector('.slides');
+        const totalSlides = document.querySelectorAll('.slides div').length;
+
+        if (index >= totalSlides) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = totalSlides - 1;
+        } else {
+            currentIndex = index;
+        }
+
+        const offset = -currentIndex * 100;
+        slides.style.transform = `translateX(${offset}%)`;
+    }
+
+    function nextSlide() {
+        showSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentIndex - 1);
+    }
+
+
+        // 언어 변경 코드
+        let isKorean = true;
+
+    function toggleLanguage() {
+        isKorean = !isKorean;
+
+        document.querySelectorAll('[data-lang-jp]').forEach(element => {
+            if (isKorean) {
+                element.innerText = element.getAttribute('data-lang-ko');
+            } else {
+                element.innerText = element.getAttribute('data-lang-jp');
+            }
+        });
+
+        // 버튼 텍스트 업데이트
+        document.getElementById('language-toggle').innerText = isKorean ? "日本語" : "한국어";
+    }
     </script>
     <link href="./css/main.css" rel="stylesheet" />
 
@@ -25,113 +68,120 @@
     <p>환영합니다! 이곳은 나뭇잎마을의 공식 홈페이지입니다.</p>
 </header>
 -->
-<div name="lang">
-    &#x1F1F0;&#x1F1F7; &#x1F1EF;&#x1F1F5;
-</div>
 <div name="murano_sugata" class="kei" id="top">
-    <img src="./img/naruto/Konohagakure_no_Sato.jpg" style="width: 100%; height: 100%;" alt="나뭇잎마을 전경">
-    <p class="mon noto-serif-jp-asdf">木ノ葉隠れの里へようこそ！</p>
+    <img src="./img/naruto/Konohagakure_no_Sato.jpg" style="width: 100%; height: 100%;" alt="나뭇잎 마을 전경">
+    <a style="position: absolute;"></a>
+    <p class="mon noto-serif-jp-asdf" data-lang-jp="木ノ葉隠れの里" data-lang-ko="나뭇잎 마을">나뭇잎 마을</p>
 </div>
 <nav>
-    <a href="#hokage_no_aisatsu">호카게의 인사</a>
-    <a href="#history">역사</a>
-    <a href="#location">위치</a>
-    <a href="#rekidai_hokage">역대 호카게</a>
-    <a href="#landmarks">주요 장소</a>
-    <a href="#sosik">마을 사진</a>
+    <a href="#hokage_no_aisatsu" data-lang-jp="火影の挨拶" data-lang-ko="호카게의 인사">호카게의 인사</a>
+    <a href="#history" data-lang-jp="歴史" data-lang-ko="역사">역사</a>
+    <a href="#location" data-lang-jp="位置" data-lang-ko="위치">위치</a>
+    <a href="#rekidai_hokage" data-lang-jp="歴代火影" data-lang-ko="역대 호카게">역대 호카게</a>
+    <a href="#landmarks" data-lang-jp="人気エリア" data-lang-ko="주요 장소">주요 장소</a>
+    <a href="#sosik" data-lang-jp="村の写真" data-lang-ko="마을 사진">마을 사진</a>
 </nav>
 
 <section id="hokage_no_aisatsu" style="height:700px;">
-    <h2><img src="./img/naruto/Konoha_Symbol.webp" class="titi"> 호카게의 인사</h2>
+    <h2><img src="./img/naruto/Konoha_Symbol.webp" class="titi"><span data-lang-jp=" 火影の挨拶" data-lang-ko=" 호카게의 인사"> 호카게의 인사</span></h2>
     <div name="hokage_shashinn" style="border: 10px solid rgba(156, 71, 32, 1); display: inline-block; width: 300px; height: 220px;">
         <img src="./img/naruto/sarutobi_hiruzenn.webp" style="width:100%;">
     </div>
     <div name="hokage_aisatsu" style="display: inline-block; float: right; width: 550px;">
 
-        <p>&nbsp;안녕하세요, 나뭇잎마을을 찾아주신 여러분을 환영합니다.</p>
-        <p>&nbsp;저는 나뭇잎마을의 호카게로서 이 마을을 책임지고 있습니다. 우리 마을은 오랜 역사와 전통을 지닌 곳으로, 닌자 세계에서 가장 강력하고 존경받는 마을 중 하나입니다. 이곳은 수많은 닌자들이 태어나고, 자라며, 자신만의 길을 찾아가는 특별한 장소입니다.</p>
-        <p>&nbsp;나뭇잎마을은 단순히 강력한 닌자들만의 마을이 아닙니다. 이곳은 자연과 조화를 이루며 살아가는 평화로운 공동체로, 모든 주민들이 서로를 존중하고, 함께 성장해 나가는 따뜻한 곳입니다. 우리가 지켜온 평화는 많은 도전과 희생을 통해 얻은 것이며, 지금도 마을의 안전과 번영을 위해 최선을 다하고 있습니다.</p>
-        <p>&nbsp;저희 마을은 방문객 여러분께도 따뜻한 환영을 전합니다. 나뭇잎마을의 아름다움과 닌자들의 정신을 느끼며, 이곳에서 특별한 경험을 하시길 바랍니다. 앞으로도 우리는 여러분께 평화롭고 안전한 마을을 약속드리며, 언제든 다시 방문해주시기를 바랍니다.</p>
-        <p>&nbsp;나뭇잎마을의 힘은 우리의 단결과 상호 신뢰에 있습니다. 마을의 발전과 평화를 위해 최선을 다할 것을 약속드리며, 여러분의 방문에 다시 한 번 감사드립니다.</p>
-        <p>&nbsp;호카게 사루토비 히루젠 드림</p>
+        <p data-lang-jp="&nbsp;こんにちは、木ノ葉隠れの里にお越しいただき、ありがとうございます。" data-lang-ko="&nbsp;안녕하세요, 나뭇잎 마을을 찾아주신 여러분을 환영합니다.">&nbsp;안녕하세요, 나뭇잎 마을을 찾아주신 여러분을 환영합니다.</p>
+        <p data-lang-jp="&nbsp;私は木ノ葉隠れの里の火影として、この里を責任を持って守っています。我が里は長い歴史と伝統を誇り、忍の世界で最も強力で尊敬される里の一つです。ここは多くの忍者が生まれ育ち、自分の道を見つける特別な場所です。" data-lang-ko="&nbsp;저는 나뭇잎 마을의 호카게로서 이 마을을 책임지고 있습니다. 우리 마을은 오랜 역사와 전통을 지닌 곳으로, 닌자 세계에서 가장 강력하고 존경받는 마을 중 하나입니다. 이곳은 수많은 닌자들이 태어나고, 자라며, 자신만의 길을 찾아가는 특별한 장소입니다.">&nbsp;저는 나뭇잎 마을의 호카게로서 이 마을을 책임지고 있습니다. 우리 마을은 오랜 역사와 전통을 지닌 곳으로, 닌자 세계에서 가장 강력하고 존경받는 마을 중 하나입니다. 이곳은 수많은 닌자들이 태어나고, 자라며, 자신만의 길을 찾아가는 특별한 장소입니다.</p>
+        <p data-lang-jp="&nbsp;木ノ葉隠れの里は単に強力な忍者たちの里だけではありません。ここは自然と調和して暮らす平和な共同体であり、全ての住民がお互いを尊重し、共に成長していく温かい場所です。私たちが守り続けてきた平和は、多くの挑戦と犠牲を通じて得られたものであり、今も里の安全と繁栄のために最善を尽くしています。" data-lang-ko="&nbsp;나뭇잎 마을은 단순히 강력한 닌자들만의 마을이 아닙니다. 이곳은 자연과 조화를 이루며 살아가는 평화로운 공동체로, 모든 주민들이 서로를 존중하고, 함께 성장해 나가는 따뜻한 곳입니다. 우리가 지켜온 평화는 많은 도전과 희생을 통해 얻은 것이며, 지금도 마을의 안전과 번영을 위해 최선을 다하고 있습니다.">&nbsp;나뭇잎 마을은 단순히 강력한 닌자들만의 마을이 아닙니다. 이곳은 자연과 조화를 이루며 살아가는 평화로운 공동체로, 모든 주민들이 서로를 존중하고, 함께 성장해 나가는 따뜻한 곳입니다. 우리가 지켜온 평화는 많은 도전과 희생을 통해 얻은 것이며, 지금도 마을의 안전과 번영을 위해 최선을 다하고 있습니다.</p>
+        <p data-lang-jp="&nbsp;私たちの里は訪れる皆さんにも温かい歓迎をお届けします。木ノ葉隠れの里の美しさと忍者の精神を感じながら、ここで特別な体験をしていただければ幸いです。これからも平和で安全な里をお約束し、いつでも再びお越しいただけることをお待ちしています。" data-lang-ko="&nbsp;저희 마을은 방문객 여러분께도 따뜻한 환영을 전합니다. 나뭇잎 마을의 아름다움과 닌자들의 정신을 느끼며, 이곳에서 특별한 경험을 하시길 바랍니다. 앞으로도 우리는 여러분께 평화롭고 안전한 마을을 약속드리며, 언제든 다시 방문해주시기를 바랍니다.">&nbsp;저희 마을은 방문객 여러분께도 따뜻한 환영을 전합니다. 나뭇잎 마을의 아름다움과 닌자들의 정신을 느끼며, 이곳에서 특별한 경험을 하시길 바랍니다. 앞으로도 우리는 여러분께 평화롭고 안전한 마을을 약속드리며, 언제든 다시 방문해주시기를 바랍니다.</p>
+        <p data-lang-jp="&nbsp;木ノ葉隠れの里の力は、私たちの団結と相互の信頼にあります。里の発展と平和のために最善を尽くすことをお約束し、皆さんの訪問に改めて感謝申し上げます。" data-lang-ko="&nbsp;나뭇잎 마을의 힘은 우리의 단결과 상호 신뢰에 있습니다. 마을의 발전과 평화를 위해 최선을 다할 것을 약속드리며, 여러분의 방문에 다시 한 번 감사드립니다.">&nbsp;나뭇잎 마을의 힘은 우리의 단결과 상호 신뢰에 있습니다. 마을의 발전과 평화를 위해 최선을 다할 것을 약속드리며, 여러분의 방문에 다시 한 번 감사드립니다.</p>
+        <p data-lang-jp="&nbsp;火影 猿飛ヒルゼン" data-lang-ko="&nbsp;호카게 사루토비 히루젠 드림">&nbsp;호카게 사루토비 히루젠 드림</p>
 
     </div>
 </section>
 
 <section id="history">
-    <h2><img src="./img/naruto/Konoha_Symbol.webp" class="titi"> 역사</h2>
-    <p>
-        나뭇잎마을(코노하)은 숲 속 깊은 곳에 위치한 평화로운 마을로, 수많은 닌자들이 이곳에서 태어나고 자랐습니다.
+    <h2><img src="./img/naruto/Konoha_Symbol.webp" class="titi"><span data-lang-jp=" 歴史" data-lang-ko=" 역사"> 역사</span></h2>
+    <p data-lang-jp="木ノ葉隠れの里（コノハ）は、森の奥深くに位置する平和な村で、多くの忍者がここで生まれ育ちました。この里は忍の世界で最も古い里の一つであり、多くの伝説的な忍者がここを通り過ぎました。" data-lang-ko="나뭇잎 마을(코노하)은 숲 속 깊은 곳에 위치한 평화로운 마을로, 수많은 닌자들이 이곳에서 태어나고 자랐습니다.
+        이 마을은 닌자 세계에서 가장 오래된 마을 중 하나로, 많은 전설적인 닌자들이 이곳을 거쳐갔습니다.">
+        나뭇잎 마을(코노하)은 숲 속 깊은 곳에 위치한 평화로운 마을로, 수많은 닌자들이 이곳에서 태어나고 자랐습니다.
         이 마을은 닌자 세계에서 가장 오래된 마을 중 하나로, 많은 전설적인 닌자들이 이곳을 거쳐갔습니다.
     </p>
-    <p>
-        나뭇잎마을의 역사는 위대한 닌자들이 이끄는 여러 차례의 전쟁과 평화협정으로 형성되었습니다.
+    <p data-lang-jp="木ノ葉隠れの里の歴史は、偉大な忍者たちが率いた数々の戦争と平和協定によって形作られました。里の創設者である初代火影は、里の平和と繁栄のために尽力しました。" data-lang-ko="나뭇잎 마을의 역사는 위대한 닌자들이 이끄는 여러 차례의 전쟁과 평화협정으로 형성되었습니다.
+        마을의 설립자인 초대 호카게는 마을의 안녕과 번영을 위해 헌신했습니다.">
+        나뭇잎 마을의 역사는 위대한 닌자들이 이끄는 여러 차례의 전쟁과 평화협정으로 형성되었습니다.
         마을의 설립자인 초대 호카게는 마을의 안녕과 번영을 위해 헌신했습니다.
     </p>
 </section>
 
 <section id="location">
-    <h2><img src="./img/naruto/Konoha_Symbol.webp" class="titi"> 위치</h2>
+    <h2><img src="./img/naruto/Konoha_Symbol.webp" class="titi"><span data-lang-jp=" 位置" data-lang-ko=" 위치"> 위치</span></h2>
     <div style="border: 10px solid rgba(156, 71, 32, 1);margin-left: auto; margin-right: auto; width: 900px; height: 500px;">
         <img src="./img/naruto/naruto_worldmap.png" style="width: 100%; height: 100%;">
     </div>
-    <p>
-        나뭇잎마을은 불의 나라에 위치하고 있으며, 아름다운 자연경관과 울창한 숲으로 둘러싸여 있습니다.
+    <p data-lang-jp="木ノ葉隠れの里は火の国に位置しており、美しい自然の景観と豊かな森に囲まれています。里は山と川に守られており、天然の防御線のおかげで外部の脅威から安全を保ってきました。" data-lang-ko="나뭇잎 마을은 불의 나라에 위치하고 있으며, 아름다운 자연경관과 울창한 숲으로 둘러싸여 있습니다.
+        마을은 산과 강으로 보호받고 있으며, 천연 방어선 덕분에 외부의 위협으로부터 안전을 유지해왔습니다.">
+        나뭇잎 마을은 불의 나라에 위치하고 있으며, 아름다운 자연경관과 울창한 숲으로 둘러싸여 있습니다.
         마을은 산과 강으로 보호받고 있으며, 천연 방어선 덕분에 외부의 위협으로부터 안전을 유지해왔습니다.
     </p>
-    <p>
+    <p data-lang-jp="この里は世界各地の忍者が集まる中心地であり、戦略的に重要な位置にあります。" data-lang-ko="이 마을은 세계 각지의 닌자들이 모이는 중심지로, 전략적으로 중요한 위치에 자리 잡고 있습니다.">
         이 마을은 세계 각지의 닌자들이 모이는 중심지로, 전략적으로 중요한 위치에 자리 잡고 있습니다.
     </p>
 </section>
 
 <section id="rekidai_hokage">
-    <h2><img src="./img/naruto/Konoha_Symbol.webp" class="titi"> 역대 호카게</h2>
+    <h2><img src="./img/naruto/Konoha_Symbol.webp" class="titi"><span data-lang-jp=" 歴代火影" data-lang-ko=" 역대 호카게"> 역대 호카게</span></h2>
+    <div>
+        <img src="./img/naruto/rekidai.jpg" style="width: 100%; margin-bottom:100px;">
+    </div>
     <div name="rekidai">
-        <p><strong>초대</strong> 센쥬 하시라마</p>
-        <div class="ekja" style="width:400px; height: 395px;">
+        <p class="hokage"><strong data-lang-jp="初代" data-lang-ko="초대">초대</strong><span data-lang-jp=" 千手柱間" data-lang-ko=" 센쥬 하시라마"> 센쥬 하시라마</span></p>
+        <div class="ekja" style="width:400px; height: 395px; margin-bottom:100px; margin-left: auto; margin-right: auto;">
             <img src="./img/naruto/senjyu_hashirama.jpg" style="width:100%;">
         </div>
-        <br>
-        <p><strong>2대</strong> 센쥬 토비라마</p>
-        <div class="ekja" style="width:400px; height: 300px;">
+        <p class="hokage"><strong data-lang-jp="二代目" data-lang-ko="2대">2대</strong><span data-lang-jp=" 千手扉間" data-lang-ko=" 센쥬 토비라마"> 센쥬 토비라마</span></p>
+        <div class="ekja" style="width:400px; height: 300px; margin-bottom:100px; margin-left: auto; margin-right: auto;">
             <img src="./img/naruto/senjyu_tobirama.webp" style="width:100%;">
         </div>
         <br>
-        <p><strong>3대</strong> 사루토비 히루젠</p>
-        <div class="ekja" style="width:400px; height: 240px;">
+        <p class="hokage"><strong data-lang-jp="三代目" data-lang-ko="3대">3대</strong><span data-lang-jp=" 猿飛ヒルゼン" data-lang-ko=" 사루토비 히루젠"> 사루토비 히루젠</span></p>
+        <div class="ekja" style="width:400px; height: 240px; margin-bottom:100px; margin-left: auto; margin-right: auto;">
             <img src="./img/naruto/sarutobi_hiruzenn1.webp" style="width:100%;">
         </div>
         <br>
-        <p><strong>4대</strong> 나미카제 미나토</p>
-        <div class="ekja" style="width:400px; height: 300px;">
+        <p class="hokage"><strong data-lang-jp="四代目" data-lang-ko="4대">4대</strong><span data-lang-jp=" 波風ミナト" data-lang-ko=" 나미카제 미나토"> 나미카제 미나토</span></p>
+        <div class="ekja" style="width:400px; height: 300px; margin-bottom:100px; margin-left: auto; margin-right: auto;">
             <img src="./img/naruto/namikaze_minato.webp" style="width:100%;">
         </div>
     </div>
 </section>
 
 <section id="landmarks">
-    <h2><img src="./img/naruto/Konoha_Symbol.webp" class="titi"> 주요 장소</h2>
+    <h2><img src="./img/naruto/Konoha_Symbol.webp" class="titi"><span data-lang-jp=" 人気エリア" data-lang-ko=" 주요 장소"> 주요 장소</span></h2>
     <div>
         <ul>
-            <li><strong>호카게 바위</strong> - 마을의 지도자였던 호카게들의 얼굴이 새겨진 거대한 바위입니다. 이곳은 나뭇잎마을의 상징적인 장소입니다.<br><img src="./img/naruto/hokage_iwa.jpeg" style="width:400px; border: 10px solid rgba(156, 71, 32, 1);"></li>
-            <li><strong>닌자 학교</strong> - 어린 닌자들이 수련을 시작하는 곳으로, 많은 유명한 닌자들이 이곳에서 교육을 받았습니다.<br><img src="./img/naruto/academi.jpg" style="width:400px; border: 10px solid rgba(156, 71, 32, 1);"></li>
-            <li><strong>일락 라면(一楽ラーメン)</strong> - 겉으로만 봐서는 그냥 허름한 포장마차 크기의 라면집이지만, 구미 습격 이전부터 운영해온 긴 역사를 가진 가게입니다. 사장 테우치 씨의 놀라운 솜씨를 맛보세요!<br><img src="./img/naruto/ramennya.jpg" style="width:400px; border: 10px solid rgba(156, 71, 32, 1);"></li>
+            <li><strong data-lang-jp="火影岩" data-lang-ko="호카게 바위">호카게 바위</strong> - <span data-lang-jp="村の指導者だった火影たちの顔が刻まれた巨大な岩です。ここは木ノ葉隠れの里の象徴的な場所です。" data-lang-ko="마을의 지도자였던 호카게들의 얼굴이 새겨진 거대한 바위입니다. 이곳은 나뭇잎마을의 상징적인 장소입니다.">마을의 지도자였던 호카게들의 얼굴이 새겨진 거대한 바위입니다. 이곳은 나뭇잎마을의 상징적인 장소입니다.</span><br><img src="./img/naruto/hokage_iwa.jpeg" style="width:400px; border: 10px solid rgba(156, 71, 32, 1);"></li>
+            <li><strong data-lang-jp="忍者学校（アカデミー）" data-lang-ko="닌자 학교">닌자 학교</strong> - <span data-lang-jp="若い忍者が修練を始める場所で、多くの有名な忍者がここで教育を受けています。" data-lang-ko="어린 닌자들이 수련을 시작하는 곳으로, 많은 유명한 닌자들이 이곳에서 교육을 받았습니다.">어린 닌자들이 수련을 시작하는 곳으로, 많은 유명한 닌자들이 이곳에서 교육을 받았습니다.</span><br><img src="./img/naruto/academi.jpg" style="width:400px; border: 10px solid rgba(156, 71, 32, 1);"></li>
+            <li><strong data-lang-jp="一楽ラーメン" data-lang-ko="일락 라면">일락 라면</strong> - <span data-lang-jp="見た目だけではただの屋台サイズのラーメン屋さんですが、九尾襲撃以前から運営してきた長い歴史を持つお店です。社長テウチさんの素晴らしい技を味わってください！" data-lang-ko="겉으로만 봐서는 그냥 허름한 포장마차 크기의 라면집이지만, 구미 습격 이전부터 운영해온 긴 역사를 가진 가게입니다. 사장 테우치 씨의 놀라운 솜씨를 맛보세요!">겉으로만 봐서는 그냥 허름한 포장마차 크기의 라면집이지만, 구미 습격 이전부터 운영해온 긴 역사를 가진 가게입니다. 사장 테우치 씨의 놀라운 솜씨를 맛보세요!</span><br><img src="./img/naruto/ramennya.jpg" style="width:400px; border: 10px solid rgba(156, 71, 32, 1);"></li>
         </ul>
     </div>
 </section>
 
 <section id="sosik">
-    <h2><img src="./img/naruto/Konoha_Symbol.webp" class="titi"> 마을 사진</h2>
-    <ul>
-        <li>호카게 님께서 계신 곳<img src="./img/naruto/sugata_hokagejimushitsu.jpg" style="width:400px; border: 10px solid rgba(156, 71, 32, 1);"></li>
-        <li>닌자 학교 수업 풍경<img src="./img/naruto/akademi.jpg" style="width:400px; border: 10px solid rgba(156, 71, 32, 1);"></li>
-        <li>닌자 학교에서 수업을 받는 학생들<img src="./img/naruto/sugata_jyugyou.jpg" style="width:400px; border: 10px solid rgba(156, 71, 32, 1);"></li>
-        <li>촬영에 몹시 긴장한 모습<img src="./img/naruto/sugata_shuuchuu.avif" style="width:400px; border: 10px solid rgba(156, 71, 32, 1);"></li>
-        <li>마을의 평범한 거리1<img src="./img/naruto/1.webp" style="width:400px; border: 10px solid rgba(156, 71, 32, 1);"></li>
-        <li>사이 좋아보이는 우리 학생들<img src="./img/naruto/sugata_gakusei.jpg" style="width:400px; border: 10px solid rgba(156, 71, 32, 1);"></li>
-        <li>마을의 평범한 거리2<img src="./img/naruto/2.jpg" style="width:400px; border: 10px solid rgba(156, 71, 32, 1);"></li>
-        <li>불꽃놀이 구경온 마을 주민들<img src="./img/naruto/sugata_yoru.jpg" style="width:400px; border: 10px solid rgba(156, 71, 32, 1);"></li>
-    </ul>
+    <h2><img src="./img/naruto/Konoha_Symbol.webp" class="titi"><span data-lang-jp=" 村の写真" data-lang-ko=" 마을 사진"> 마을 사진</span></h2>
+    <div class="slider">
+        <div class="slides">
+            <div class="setsumei"><img src="./img/naruto/sugata_hokagejimushitsu.jpg" class="shashinn"><span data-lang-jp="火影岩" data-lang-ko="호카게 바위">호카게 바위</span></div>
+            <div class="setsumei"><img src="./img/naruto/akademi.jpg" class="shashinn"><span data-lang-jp="忍者学校授業中" data-lang-ko="닌자 학교 수업 풍경">닌자 학교 수업 풍경</span></div>
+            <div class="setsumei"><img src="./img/naruto/sugata_jyugyou.jpg" class="shashinn"><span data-lang-jp="忍者学校で授業を受ける学生たち" data-lang-ko="닌자 학교에서 수업을 받는 학생들">닌자 학교에서 수업을 받는 학생들</span></div>
+            <div class="setsumei"><img src="./img/naruto/sugata_shuuchuu.jpg" class="shashinn"><span data-lang-jp="撮影にすごく緊張した姿" data-lang-ko="촬영에 몹시 긴장한 모습">촬영에 몹시 긴장한 모습</span></div>
+            <div class="setsumei"><img src="./img/naruto/1.webp" class="shashinn"><span data-lang-jp="村の平凡な通り１" data-lang-ko="마을의 평범한 거리1">마을의 평범한 거리1</span></div>
+            <div class="setsumei"><img src="./img/naruto/sugata_gakusei.jpg" class="shashinn"><span data-lang-jp="仲良く見える学生たち" data-lang-ko="사이 좋아보이는 우리 학생들">사이 좋아보이는 우리 학생들</span></div>
+            <div class="setsumei"><img src="./img/naruto/2.jpg" class="shashinn"><span data-lang-jp="村の平凡な通り２" data-lang-ko="마을의 평범한 거리2">마을의 평범한 거리2</span></div>
+            <div class="setsumei"><img src="./img/naruto/sugata_yoru.jpg" class="shashinn"><span data-lang-jp="花火を見にに来た学生たち" data-lang-ko="불꽃놀이 구경온 학생들">불꽃놀이 구경온 학생들</span></div>
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
 </section>
 
 <br>
@@ -139,7 +189,16 @@
 <br>
 <br>
 <footer>
-    <p>© 2024 나뭇잎마을. 모든 권리 보유. 現 호카게 : 사루토비 히루젠 &nbsp; <a href="#top" style="text-align: right;">맨 위로</a></p>
+    <nav>
+        <a href="#hokage_no_aisatsu" data-lang-jp="火影の挨拶" data-lang-ko="호카게의 인사">호카게의 인사</a>
+        <a href="#history" data-lang-jp="歴史" data-lang-ko="역사">역사</a>
+        <a href="#location" data-lang-jp="位置" data-lang-ko="위치">위치</a>
+        <a href="#rekidai_hokage" data-lang-jp="歴代火影" data-lang-ko="역대 호카게">역대 호카게</a>
+        <a href="#landmarks" data-lang-jp="人気エリア" data-lang-ko="주요 장소">주요 장소</a>
+        <a href="#sosik" data-lang-jp="村の写真" data-lang-ko="마을 사진">마을 사진</a>
+        <a href="#top" data-lang-jp="トップへ" data-lang-ko="맨 위로">맨 위로</a>
+        <button id="language-toggle" onclick="toggleLanguage()" style="width: 80px; height: 30px;">日本語</button>
+    </nav>
 </footer>
 </body>
 </html>
