@@ -38,6 +38,7 @@ nav a:hover {
 section {
     padding: 30px;
     margin: 20px auto;
+    margin-left: 15px;
     max-width: 900px;
     background-color: #fff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -110,6 +111,22 @@ footer {
     border: 10px solid rgba(156, 71, 32, 1);
 }
 
+#remoteControl{
+    border-radius: 10px;
+    position: absolute;  /* 기본 위치는 페이지 하단 */
+    top: 1500px;         /* 페이지의 하단에 배치 */
+    right: 20px;         /* 우측에 위치 */
+    width: 280px;        /* div의 너비 설정 */
+    background-color: rgba(255, 255, 255, 0.9); /* 배경색과 약간의 투명도 설정 */
+    padding: 15px;       /* 내부 여백 설정 */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* 그림자 효과 추가 */
+    transition: top 0.3s ease-in-out;  /* top 위치 변화를 부드럽게 처리 */
+}
+
+#remoteControl.fixed {
+    position: fixed;  /* 화면에 고정 */
+    top: 20px;        /* 스크롤 시 화면 상단에서 50px 아래에 고정 */
+}
 
 /* 슬라이더 */
 /* 슬라이더 컨테이너 */
@@ -171,4 +188,17 @@ footer {
 .shashinn{
     width:600px;
     height:440px;
+}
+
+.kinnkou{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.my_button{
+    background-color: #d94e5d;
+    color: white;
+    text-decoration: none;
+    padding: 10px 10px;
+    border-radius: 10px;
 }
