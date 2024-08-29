@@ -115,7 +115,7 @@ footer {
 
 #remoteControl{
     border-radius: 10px;
-    position: absolute;  /* 기본 위치는 페이지 하단 */
+    position: fixed;  /* 기본 위치는 페이지 하단 */
     top: 1500px;         /* 페이지의 하단에 배치 */
     right: 20px;         /* 우측에 위치 */
     width: 280px;        /* div의 너비 설정 */

@@ -15,6 +15,7 @@
             getout = true;
             scrollyy = this.scrollY;
             window.scrollTo(0, 0);
+            window.scrollTo(0, 1);
             window.scrollTo(0, scrollyy);
         }
 
@@ -22,6 +23,7 @@
             getout = false;
             scrollyy = this.scrollY;
             window.scrollTo(0, 0);
+            window.scrollTo(0, 1);
             window.scrollTo(0, scrollyy);
         }
 
@@ -41,12 +43,13 @@
             }
 
             // 고정 위치 설정
+            /*
             if (window.scrollY > triggerHeight) {
                 sidebar.classList.add('fixed');
             } else {
                 sidebar.classList.remove('fixed');
             }
-
+*/
             // 스크롤 위치에 따른 이미지 변경
             if (window.scrollY > 800 && window.scrollY <= 1200) {
                 dynamicImage.src = './img/naruto/sasuke.webp';
