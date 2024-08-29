@@ -40,6 +40,8 @@ section {
     margin: 20px auto;
     margin-left: 15px;
     max-width: 900px;
+    min-width: 300px;
+    width: auto;
     background-color: #fff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -126,6 +128,10 @@ footer {
 #remoteControl.fixed {
     position: fixed;  /* 화면에 고정 */
     top: 20px;        /* 스크롤 시 화면 상단에서 50px 아래에 고정 */
+}
+
+#remoteControl.kakushi{
+    display: none;
 }
 
 /* 슬라이더 */

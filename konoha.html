@@ -3,16 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>木ノ葉隠れの里</title>
+    <title data-lang-jp="木ノ葉隠れの里" data-lang-ko="나뭇잎 마을">木ノ葉隠れの里</title>
     <style type="text/css">
 
     </style>
     <script type="text/javascript">
 
+        var getout = false;
+        var scrollyy = 0;
+        function getOut(){
+            getout = true;
+            scrollyy = this.scrollY;
+            window.scrollTo(0, 0);
+            window.scrollTo(0, scrollyy);
+        }
+
+        function getIn(){
+            getout = false;
+            scrollyy = this.scrollY;
+            window.scrollTo(0, 0);
+            window.scrollTo(0, scrollyy);
+        }
+
         window.addEventListener('scroll', function() {
+
             var sidebar = document.getElementById('remoteControl');
             var dynamicImage = document.getElementById('dynamicImage');
             var triggerHeight = 600;  // 고정되기 시작할 스크롤 위치
+
+            if(getout){
+                sidebar.classList.remove('fixed');
+                sidebar.classList.add('kakushi');
+                scrollyy = this.scrollY;
+            }else{
+                sidebar.classList.remove('kakushi');
+                sidebar.classList.add('fixed');
+            }
 
             // 고정 위치 설정
             if (window.scrollY > triggerHeight) {
@@ -130,6 +156,7 @@
 
 <!-- @리모컨@  -->
 <div id="remoteControl">
+    <a href="javascript:getOut()" style="text-decoration: none;">✖️</a>
     <h1 style="color: black; text-align: center; margin-top: 10px;">Log in</h1>
     <table class="kinnkou">
         <colgroup>
@@ -160,7 +187,7 @@
         <img src="./img/naruto/sarutobi_hiruzenn.webp" style="width:100%;">
     </div>
     <div name="hokage_aisatsu" style="display: inline-block; float: right; width: 550px;">
-        <p data-lang-jp="&nbsp;こんにちは、木ノ葉隠れの里にお越しいただき、ありがとうございます。" data-lang-ko="&nbsp;안녕하세요, 나뭇잎 마을을 찾아주신 여러분을 환영합니다.">&nbsp;안녕하세요, 나뭇잎 마을을 찾아주신 여러분을 환영합니다.</p>
+        <p data-lang-jp="&nbsp;はじめまして、木ノ葉隠れの里にお越しいただき、ありがとうございます。" data-lang-ko="&nbsp;안녕하세요, 나뭇잎 마을을 찾아주신 여러분을 환영합니다.">&nbsp;안녕하세요, 나뭇잎 마을을 찾아주신 여러분을 환영합니다.</p>
         <p data-lang-jp="&nbsp;私は木ノ葉隠れの里の火影として、この里を責任を持って守っています。我が里は長い歴史と伝統を誇り、忍の世界で最も強力で尊敬される里の一つです。ここは多くの忍者が生まれ育ち、自分の道を見つける特別な場所です。" data-lang-ko="&nbsp;저는 나뭇잎 마을의 호카게로서 이 마을을 책임지고 있습니다. 우리 마을은 오랜 역사와 전통을 지닌 곳으로, 닌자 세계에서 가장 강력하고 존경받는 마을 중 하나입니다. 이곳은 수많은 닌자들이 태어나고, 자라며, 자신만의 길을 찾아가는 특별한 장소입니다.">&nbsp;저는 나뭇잎 마을의 호카게로서 이 마을을 책임지고 있습니다. 우리 마을은 오랜 역사와 전통을 지닌 곳으로, 닌자 세계에서 가장 강력하고 존경받는 마을 중 하나입니다. 이곳은 수많은 닌자들이 태어나고, 자라며, 자신만의 길을 찾아가는 특별한 장소입니다.</p>
         <p data-lang-jp="&nbsp;木ノ葉隠れの里は単に強力な忍者たちの里だけではありません。ここは自然と調和して暮らす平和な共同体であり、全ての住民がお互いを尊重し、共に成長していく温かい場所です。私たちが守り続けてきた平和は、多くの挑戦と犠牲を通じて得られたものであり、今も里の安全と繁栄のために最善を尽くしています。" data-lang-ko="&nbsp;나뭇잎 마을은 단순히 강력한 닌자들만의 마을이 아닙니다. 이곳은 자연과 조화를 이루며 살아가는 평화로운 공동체로, 모든 주민들이 서로를 존중하고, 함께 성장해 나가는 따뜻한 곳입니다. 우리가 지켜온 평화는 많은 도전과 희생을 통해 얻은 것이며, 지금도 마을의 안전과 번영을 위해 최선을 다하고 있습니다.">&nbsp;나뭇잎 마을은 단순히 강력한 닌자들만의 마을이 아닙니다. 이곳은 자연과 조화를 이루며 살아가는 평화로운 공동체로, 모든 주민들이 서로를 존중하고, 함께 성장해 나가는 따뜻한 곳입니다. 우리가 지켜온 평화는 많은 도전과 희생을 통해 얻은 것이며, 지금도 마을의 안전과 번영을 위해 최선을 다하고 있습니다.</p>
         <p data-lang-jp="&nbsp;私たちの里は訪れる皆さんにも温かい歓迎をお届けします。木ノ葉隠れの里の美しさと忍者の精神を感じながら、ここで特別な体験をしていただければ幸いです。これからも平和で安全な里をお約束し、いつでも再びお越しいただけることをお待ちしています。" data-lang-ko="&nbsp;저희 마을은 방문객 여러분께도 따뜻한 환영을 전합니다. 나뭇잎 마을의 아름다움과 닌자들의 정신을 느끼며, 이곳에서 특별한 경험을 하시길 바랍니다. 앞으로도 우리는 여러분께 평화롭고 안전한 마을을 약속드리며, 언제든 다시 방문해주시기를 바랍니다.">&nbsp;저희 마을은 방문객 여러분께도 따뜻한 환영을 전합니다. 나뭇잎 마을의 아름다움과 닌자들의 정신을 느끼며, 이곳에서 특별한 경험을 하시길 바랍니다. 앞으로도 우리는 여러분께 평화롭고 안전한 마을을 약속드리며, 언제든 다시 방문해주시기를 바랍니다.</p>
@@ -268,6 +295,7 @@
         <a href="#sosik" data-lang-jp="村の写真" data-lang-ko="마을 사진">마을 사진</a>
         <a href="#top" data-lang-jp="トップへ" data-lang-ko="맨 위로">맨 위로</a>
         <button id="language-toggle" onclick="toggleLanguage()" style="width: 100px; height: 50px;">日本語</button>
+        <a href="javascript:getIn()" class="my_button">Log in</a>
     </nav>
 </footer>
 </body>
